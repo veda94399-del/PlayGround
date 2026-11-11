@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#111820" />
+  <title>Grand City: Crime Empire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=2" />
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+  <main id="game">
+    <canvas id="world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">GC<span>◆</span></div><div><b>GRAND CITY</b><small>CRIME EMPIRE</small></div></div>
+      <div class="location"><i></i><span id="district">PACIFIC HEIGHTS</span><em>LOS SANTOS COUNTY</em></div>
+      <div class="top-right"><div class="clock"><span class="sun-icon">◷</span><span id="clock">18:42</span><small id="weather-label">CLEAR</small></div><div class="avatar">M</div></div>
+    </header>
+    <section class="mission-card" id="mission-card"><div class="mission-tag"><span class="pulse"></span> STORY · CHAPTER 01</div><div class="mission-title" id="mission-title">A CITY OF<br><i>OPPORTUNITY</i></div><p id="mission-copy">Meet your contact at the pier. The city is yours to take.</p><div class="mission-bottom"><span class="mission-dot"></span><span id="mission-objective">GO TO THE GOLD MARKER</span><span class="distance" id="distance">1.2 KM</span></div></section>
+    <div class="wanted" id="wanted"><span>WANTED</span><div class="stars"><b>☆</b><b>☆</b><b>☆</b><b>☆</b><b>☆</b></div></div>
+    <div class="speed-card" id="speed-card"><div class="speed-number"><strong id="speed">0</strong><small>KM/H</small></div><div class="gear">D</div><div class="speed-line"><i id="speed-line"></i></div></div>
+    <div class="minimap-frame"><div class="map-label">CITY NAV <span>↗</span></div><canvas id="minimap" width="220" height="220"></canvas><div class="map-bottom"><span><b>●</b> YOUR POSITION</span><span id="map-coords">34° 02' N</span></div></div>
+    <div class="help-strip"><span class="key">WASD</span> MOVE <span class="sep">·</span><span class="key">E</span> ENTER / EXIT <span class="sep">·</span><span class="key">SPACE</span> JUMP <span class="sep">·</span><span class="key">M</span> PHONE</div>
+    <div class="interaction" id="interaction"><span class="key large">E</span><span id="interaction-text">ENTER VEHICLE</span></div>
+    <div class="toast" id="toast"></div>
+    <section class="phone" id="phone"><div class="phone-notch"></div><div class="phone-head"><span>●  LTE</span><span id="phone-time">18:42</span><span>▰</span></div><div class="phone-brand">G<span>•</span> CITY</div><div class="phone-date">THURSDAY, OCTOBER 16</div><div class="phone-time-big" id="phone-big-time">18:42</div><div class="phone-grid"><button data-app="map"><b class="app map-app">⌖</b><span>MAP</span></button><button data-app="missions"><b class="app mission-app">✦</b><span>MISSIONS</span></button><button data-app="weather"><b class="app weather-app">☼</b><span>WEATHER</span></button><button data-app="garage"><b class="app garage-app">▰</b><span>GARAGE</span></button></div><div class="phone-tip">TAP AN APP TO EXPLORE</div><button class="phone-close" id="phone-close">CLOSE PHONE <span>▼</span></button></section>
+    <div class="modal" id="modal"><div class="modal-card"><button class="modal-x" id="modal-close">×</button><div class="modal-kicker">GRAND CITY · FIELD GUIDE</div><h2 id="modal-title">CITY MAP</h2><div class="modal-content" id="modal-content"></div></div></div>
+    <div class="touch-controls" id="touch-controls"><div class="move-pad"><button data-key="w">▲</button><div><button data-key="a">◀</button><button data-key="s">▼</button><button data-key="d">▶</button></div></div><div class="action-pad"><button data-action="jump">JUMP</button><button data-action="interact">ENTER</button></div></div>
+    <div class="intro" id="intro"><div class="intro-line"></div><div class="intro-kicker">WELCOME TO THE WEST COAST</div><h1>THE CITY IS<br><i>YOUR EMPIRE.</i></h1><p>A living city. A fresh start. Everything to lose.</p><button id="start-game">ENTER THE CITY <span>→</span></button><div class="intro-footer">WASD TO MOVE <span>·</span> E TO INTERACT <span>·</span> M FOR YOUR PHONE</div></div>
+    <div class="loading" id="loading"><div class="loader-mark">GC<span>◆</span></div><span>BUILDING YOUR CITY</span></div>
+  </main>
+  <script type="module" src="game.js?v=4"></script>
+</body>
+</html>
